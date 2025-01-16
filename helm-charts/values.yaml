@@ -1,4 +1,6 @@
 ---
 projName: projNameCommon
-hello.projName: projNameTestForHello
-mysql.projName: projNameTestForMySQL
+hello:
+  projName: projNameTestForHello
+mysql:
+  projName: projNameTestForMySQL
