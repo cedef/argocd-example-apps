@@ -2,3 +2,10 @@ apiVersion: v2
 name: parent-chart
 description: A Helm chart to manage all sub-charts
 version: 1.0.0
+dependencies:
+  - name: hello
+    version: "1.0.0"
+    repository: "file://./hello"
+  - name: mysql
+    version: "1.0.0"
+    repository: "file://./mysql"

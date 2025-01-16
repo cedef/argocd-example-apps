@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: test-preprod
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=confirm
 spec:
   project: default
   source:
