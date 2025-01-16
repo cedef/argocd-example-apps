@@ -1,11 +1,11 @@
 ---
-hello:
+stacapi:
   env: prod
   componentName: db-prod
   replicas: 2
   projName: SurchargedProjNameForHello
 
-mysql:
+pgstac:
   env: prodForMySQLOnly
   componentName: db-prod
   replicas: 2

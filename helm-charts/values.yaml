@@ -1,6 +1,6 @@
 ---
 projName: projNameCommon
-hello:
+stacapi:
   projName: projNameTestForHello
-mysql:
+pgstac:
   projName: projNameTestForMySQL

@@ -3,9 +3,9 @@ name: parent-chart
 description: A Helm chart to manage all sub-charts
 version: 1.0.0
 dependencies:
-  - name: hello
+  - name: stacapi
     version: "1.0.0"
-    repository: "file://./hello"
-  - name: mysql
+    repository: "file://./stacapi"
+  - name: pgstac
     version: "1.0.0"
-    repository: "file://./mysql"
+    repository: "file://./pgstac"
