@@ -1,2 +1,2 @@
-env: unknown
-componentName: db-default
+env: unknownFromChartValue
+componentName: unknownFromChartValue

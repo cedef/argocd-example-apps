@@ -1,2 +1,3 @@
 ---
-hello.projName: test
+hello.projName: projNameTestForHello
+mysql.projName: projNameTestForMySQL

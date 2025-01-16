@@ -1,4 +1,8 @@
 ---
 hello.env: preprod
-componentName: db-preprod
+hello.componentName: db-preprod
 hello.replicas: 2
+
+mysql.env: preprod
+mysql.componentName: db-preprod
+mysql.replicas: 2
