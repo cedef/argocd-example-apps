@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-preprod
+  name: cdstheia-preprod
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-options: Prune=confirm
