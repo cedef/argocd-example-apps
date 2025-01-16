@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-prerod
+  name: test-preprod
   namespace: argocd
 spec:
   project: default
