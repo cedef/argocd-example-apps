@@ -3,8 +3,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-app
-  env: {{ .Values.env }}
-  project: {{ .Values.projName }}
+  labels:
+    env: {{ .Values.env }}
+    project: {{ .Values.projName }}
 spec:
   replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 3
