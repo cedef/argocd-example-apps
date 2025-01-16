@@ -15,6 +15,7 @@ spec:
       labels:
         app: db
         env: {{ .Values.env }}
+        project: {{ .Values.projName }}
         componentName: {{ .Values.componentName }}
     spec:
       containers:

@@ -10,6 +10,10 @@ spec:
     repoURL: https://github.com/cedef/argocd-example-apps.git
     targetRevision: HEAD
     path: helm-charts
+    valueFiles:
+    - values.yaml
+    - values-preprod.yaml
+    ignoreMissingValueFiles: true
   destination:
     server: https://kubernetes.default.svc
     namespace: test-preprod
