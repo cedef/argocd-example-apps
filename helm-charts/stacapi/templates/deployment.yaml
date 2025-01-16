@@ -23,4 +23,6 @@ spec:
         name: alpine-shell
         command: ["/bin/sh", "-c", "sleep 3600"]
         ports:
-        - containerPort: 80
+          - name: http
+            containerPort: 80
+            protocol: TCP
