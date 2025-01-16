@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db
+  name: stacapi
   labels:
     env: {{ .Values.env }}
     component: database
@@ -10,11 +10,11 @@ spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: db
+      app: stacapi
   template:
     metadata:
       labels:
-        app: db
+        app: stacapi
         env: {{ .Values.env }}
         project: {{ .Values.projName }}
         componentName: {{ .Values.componentName }}

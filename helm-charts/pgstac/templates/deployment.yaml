@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app
+  name: pgstac
   labels:
     env: {{ .Values.env }}
     project: {{ .Values.projName }}

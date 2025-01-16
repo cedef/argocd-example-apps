@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: stacapi
   labels:
-    app: db
+    app: stacapi
     env: {{ .Values.env }}
     project: {{ .Values.projName }}
     componentName: {{ .Values.componentName }}
