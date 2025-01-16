@@ -3,6 +3,7 @@ hello:
   env: preprod
   componentName: db-preprod
   replicas: 2
+  projName: SurchargedProjNameForHello
 
 mysql:
   env: preprodForMySQLOnly
