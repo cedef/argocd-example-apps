@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  env: {{ .Values.env }}
+  component: database
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: alpine:latest
+        name: alpine-shell-{{ .Values.componentName }}
+        command: ["/bin/sh", "-c", "sleep 3600"]
+        ports:
+        - containerPort: 80
