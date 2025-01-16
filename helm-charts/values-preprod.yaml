@@ -1,3 +1,4 @@
+---
 hello.env: preprod
 componentName: db-preprod
 hello.replicas: 2
