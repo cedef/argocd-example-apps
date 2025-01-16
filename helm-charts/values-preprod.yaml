@@ -5,6 +5,6 @@ hello:
   replicas: 2
 
 mysql:
-  env: preprod
+  env: preprodForMySQLOnly
   componentName: db-preprod
   replicas: 2
