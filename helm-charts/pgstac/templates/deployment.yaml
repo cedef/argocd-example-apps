@@ -6,6 +6,7 @@ metadata:
   labels:
     env: {{ .Values.env }}
     project: {{ .Values.projName | default "unknownProjName" }}
+    dummyLabel: addedNow
 spec:
   replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 3
