@@ -6,7 +6,7 @@ metadata:
   labels:
     app: stacapi
     env: {{ .Values.env }}
-    project: {{ .Values.projName }}
+    project: {{ .Values.projName | default "unknownProjName" }}
     componentName: {{ .Values.componentName }}
 spec:
   ports:
@@ -16,5 +16,5 @@ spec:
   selector:
     app: db
     env: {{ .Values.env }}
-    project: {{ .Values.projName }}
+    project: {{ .Values.projName | default "unknownProjName" }}
     componentName: {{ .Values.componentName }}
