@@ -19,7 +19,7 @@ spec:
         project: {{ .Values.projName | default "unknownProjName" }}
         componentName: {{ .Values.componentName }}
       annotations:
-        accessible-from-internet: {{ .Values.openToInternet }}
+        accessible-from-internet: {{ .Values.openToInternet | quote }}
     spec:
       containers:
       - image: alpine:latest

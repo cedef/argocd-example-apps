@@ -1,3 +1,3 @@
 ---
 superGlobalVariable: "superGlobValue"
-openToInternet: false
+openToInternet: "false"

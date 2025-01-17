@@ -1,4 +1,4 @@
 ---
 env: prod
 superGlobalVariable: "superGlobProdValue"
-openToInternet: true
+openToInternet: "true"
