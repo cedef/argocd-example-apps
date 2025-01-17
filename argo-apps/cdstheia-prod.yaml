@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cdstheia-preprod
+  name: cdstheia-prod
   namespace: argocd
 spec:
   goTemplate: true
@@ -15,11 +15,11 @@ spec:
           - path: helm-charts/*
   template:
     metadata:
-      name: '{{.path.basename}}-preprod'
+      name: '{{.path.basename}}-prod'
       namespace: argocd
       labels:
         component: '{{.path.basename}}'
-        env: preprod
+        env: prod
     spec:
       project: default
       source:
@@ -29,13 +29,13 @@ spec:
         helm:
           valueFiles:
           - ../global-values.yaml
-          - ../global-values-preprod.yaml
+          - ../global-values-prod.yaml
           - values.yaml
-          - values-preprod.yaml
+          - values-prod.yaml
           ignoreMissingValueFiles: false
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'test-preprod'
+        namespace: 'test-prod'
       syncPolicy:
         automated:
           prune: true
@@ -44,7 +44,7 @@ spec:
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
 # metadata:
-#   name: cdstheia-preprod
+#   name: cdstheia-prod
 #   namespace: argocd
 #   annotations:
 #     argocd.argoproj.io/sync-options: Prune=confirm
@@ -57,8 +57,8 @@ spec:
 #     helm:
 #       valuefiles:
 #       - values.yaml
-#       - values-preprod.yaml
+#       - values-prod.yaml
 #       ignoremissingvaluefiles: false
 #   destination:
 #     server: https://kubernetes.default.svc
-#     namespace: test-preprod
+#     namespace: test-prod
