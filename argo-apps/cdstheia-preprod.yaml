@@ -35,30 +35,13 @@ spec:
           ignoreMissingValueFiles: false
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'test-preprod'
+        namespace: test-preprod
+  templatePatch: |
+    spec:
+    {{- if eq $.path.basename "stacapi" }}
       syncPolicy:
         automated:
           prune: true
-          selfHeal: true
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: cdstheia-preprod
-#   namespace: argocd
-#   annotations:
-#     argocd.argoproj.io/sync-options: Prune=confirm
-# spec:
-#   project: default
-#   source:
-#     repourl: https://github.com/cedef/argocd-example-apps.git
-#     targetrevision: head
-#     path: helm-charts
-#     helm:
-#       valuefiles:
-#       - values.yaml
-#       - values-preprod.yaml
-#       ignoremissingvaluefiles: false
-#   destination:
-#     server: https://kubernetes.default.svc
-#     namespace: test-preprod
+    {{- else }}
+      syncPolicy: {}
+    {{- end }}
