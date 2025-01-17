@@ -29,4 +29,4 @@ spec:
           - name: http
             containerPort: 80
             protocol: TCP
-        resources: {{- toYaml .Values.resources | nindent 8 }}
+        resources: {{- toYaml .Values.resources | nindent 10 }}
