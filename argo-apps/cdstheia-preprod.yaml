@@ -34,7 +34,7 @@ spec:
           - ../global-values-preprod.yaml
           - values.yaml
           - values-preprod.yaml
-          ignoreMissingValueFiles: false
+          ignoreMissingValueFiles: true
       destination:
         server: https://kubernetes.default.svc
         namespace: test-preprod
