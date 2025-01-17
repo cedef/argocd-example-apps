@@ -38,3 +38,12 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: test-preprod
+  templatePatch: |
+    spec:
+    {{- if eq $.path.basename "stacapi" }}
+      syncPolicy:
+        automated:
+          prune: true
+    {{- else }}
+      syncPolicy: {}
+    {{- end }}
