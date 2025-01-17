@@ -16,7 +16,7 @@ spec:
       labels:
         app: stacapi
         env: {{ .Values.env }}
-        project: {{ .Values.projName }}
+        project: {{ .Values.projName | default "unknownProjName" }}
         componentName: {{ .Values.componentName }}
       annotations:
         accessible-from-internet: {{ .Values.openToInternet }}
