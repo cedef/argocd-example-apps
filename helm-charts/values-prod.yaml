@@ -1,11 +1,4 @@
 ---
-stacapi:
-  env: prod
-  componentName: db-prod
-  replicas: 2
-  projName: SurchargedProjNameForHello
-
-pgstac:
-  env: prodForMySQLOnly
-  componentName: db-prod
-  replicas: 2
+env: prod
+superGlobalVariable: "superGlobProdValue"
+openToInternet: true

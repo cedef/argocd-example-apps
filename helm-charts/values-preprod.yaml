@@ -1,11 +1,3 @@
 ---
-stacapi:
-  env: preprod
-  componentName: db-preprod
-  replicas: 2
-  projName: SurchargedProjNameForHello
-
-pgstac:
-  env: preprodForMySQLOnly
-  componentName: db-preprod
-  replicas: 2
+env: preprod
+superGlobalVariable: "superGlobPreprodValue"

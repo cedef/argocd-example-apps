@@ -6,7 +6,7 @@ metadata:
     env: {{ .Values.env }}
     component: database
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -18,6 +18,8 @@ spec:
         env: {{ .Values.env }}
         project: {{ .Values.projName }}
         componentName: {{ .Values.componentName }}
+      annotations:
+        accessible-from-internet: {{ .Values.openToInternet }}
     spec:
       containers:
       - image: alpine:latest
@@ -27,3 +29,4 @@ spec:
           - name: http
             containerPort: 80
             protocol: TCP
+        resources: {{- toYaml .Values.resources }}
