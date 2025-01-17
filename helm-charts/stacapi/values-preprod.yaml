@@ -2,4 +2,4 @@
 replicas: 2
 resources:
   requests:
-    cpu: "2"
+    cpu: "200m"

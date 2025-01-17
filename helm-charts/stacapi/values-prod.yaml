@@ -1,5 +1,5 @@
 replicas: 4
 resources:
   requests:
-    cpu: "8"
-    memory: 16Gi
+    cpu: "80m"
+    memory: 160Mi
