@@ -5,7 +5,7 @@ metadata:
   name: pgstac
   labels:
     env: {{ .Values.env }}
-    project: {{ .Values.projName }}
+    project: {{ .Values.projName | default "unknownProjName" }}
 spec:
   replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 3
@@ -17,7 +17,7 @@ spec:
       labels:
         app: guestbook-ui
         env: {{ .Values.env }}
-        project: {{ .Values.projName }}
+        project: {{ .Values.projName | default "unknownProjName" }}
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
