@@ -22,6 +22,8 @@ spec:
         env: prod
     spec:
       project: default
+      syncPolicy:
+        applicationsSync: create-update
       source:
         repoURL: https://github.com/cedef/argocd-example-apps.git
         targetRevision: HEAD
@@ -36,12 +38,3 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: test-prod
-  templatePatch: |
-    spec:
-    {{- if eq $.path.basename "stacapi" }}
-      syncPolicy:
-        automated:
-          prune: true
-    {{- else }}
-      syncPolicy: {}
-    {{- end }}
