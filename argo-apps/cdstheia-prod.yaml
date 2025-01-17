@@ -7,6 +7,8 @@ metadata:
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
+  syncPolicy:
+    applicationsSync: create-update
   generators:
     - git:
         repoURL: https://github.com/cedef/argocd-example-apps.git
@@ -22,8 +24,6 @@ spec:
         env: prod
     spec:
       project: default
-      syncPolicy:
-        applicationsSync: create-update
       source:
         repoURL: https://github.com/cedef/argocd-example-apps.git
         targetRevision: HEAD

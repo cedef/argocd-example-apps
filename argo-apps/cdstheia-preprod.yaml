@@ -5,6 +5,8 @@ metadata:
   name: cdstheia-preprod
   namespace: argocd
 spec:
+  syncPolicy:
+    applicationsSync: create-update
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
@@ -22,8 +24,6 @@ spec:
         env: preprod
     spec:
       project: default
-      syncPolicy:
-        applicationsSync: create-update
       source:
         repoURL: https://github.com/cedef/argocd-example-apps.git
         targetRevision: HEAD
