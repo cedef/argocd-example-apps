@@ -20,7 +20,7 @@ spec:
       name: '{{.path.basename}}-prod'
       namespace: argocd
       labels:
-        component: '{{.path.basename}}'
+        app: '{{.path.basename}}'
         env: prod
     spec:
       project: default

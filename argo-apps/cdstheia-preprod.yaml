@@ -20,7 +20,7 @@ spec:
       name: '{{.path.basename}}-preprod'
       namespace: argocd
       labels:
-        component: '{{.path.basename}}'
+        app: '{{.path.basename}}'
         env: preprod
     spec:
       project: default
