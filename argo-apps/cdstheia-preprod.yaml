@@ -22,7 +22,7 @@ spec:
       labels:
         app: '{{.path.basename}}'
         env: preprod
-        team: opscircle
+        maintainer: opscircle
     spec:
       project: default
       source:
