@@ -22,6 +22,8 @@ spec:
       labels:
         app: '{{.path.basename}}'
         env: prod
+        maintainer: opscircle
+        created-for: inra
     spec:
       project: default
       source:

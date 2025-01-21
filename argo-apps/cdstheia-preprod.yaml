@@ -23,6 +23,7 @@ spec:
         app: '{{.path.basename}}'
         env: preprod
         maintainer: opscircle
+        created-for: inra
     spec:
       project: default
       source:
