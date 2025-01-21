@@ -34,7 +34,7 @@ spec:
           - ../global-values-prod.yaml
           - values.yaml
           - values-prod.yaml
-          - secrets://secrets-prod.yaml
+          - secrets://?secrets-prod.yaml
           ignoreMissingValueFiles: true
       destination:
         server: https://kubernetes.default.svc
