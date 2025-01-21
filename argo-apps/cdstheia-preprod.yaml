@@ -42,10 +42,10 @@ spec:
         namespace: test-preprod
   templatePatch: |
     spec:
-    {{- if eq $.path.basename "stacapi" }}
+    {{- if eq $.path.basename "not-synced-chart-name" }}
+      syncPolicy: {}
+    {{- else }}
       syncPolicy:
         automated:
           prune: true
-    {{- else }}
-      syncPolicy: {}
     {{- end }}
