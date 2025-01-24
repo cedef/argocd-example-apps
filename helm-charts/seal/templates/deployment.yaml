@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seal
+  labels:
+    env: {{ .Values.env }}
+    component: database
+spec:
+  replicas: {{ .Values.replicas }}
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: seal
+  template:
+    metadata:
+      labels:
+        app: seal
+        env: {{ .Values.env }}
+        project: {{ .Values.projName | default "unknownProjName" }}
+        componentName: {{ .Values.componentName }}
+      annotations:
+        accessible-from-internet: {{ .Values.openToInternet | quote }}
+    spec:
+      containers:
+      - image: alpine:latest
+        name: alpine-shell
+        command: ["/bin/sh", "-c", "sleep 3600"]
+        ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+        resources: {{- toYaml .Values.resources | nindent 10 }}

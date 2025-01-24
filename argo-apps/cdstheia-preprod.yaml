@@ -20,7 +20,7 @@ spec:
       name: '{{.path.basename}}-preprod'
       namespace: argocd
       labels:
-        component: '{{.path.basename}}'
+        app: '{{.path.basename}}'
         env: preprod
     spec:
       project: default
@@ -34,16 +34,17 @@ spec:
           - ../global-values-preprod.yaml
           - values.yaml
           - values-preprod.yaml
-          ignoreMissingValueFiles: false
+          - secrets://?secrets-preprod.yaml
+          ignoreMissingValueFiles: true
       destination:
         server: https://kubernetes.default.svc
         namespace: test-preprod
   templatePatch: |
     spec:
-    {{- if eq $.path.basename "stacapi" }}
+    {{- if eq $.path.basename "not-synced-chart-name" }}
+      syncPolicy: {}
+    {{- else }}
       syncPolicy:
         automated:
           prune: true
-    {{- else }}
-      syncPolicy: {}
     {{- end }}
